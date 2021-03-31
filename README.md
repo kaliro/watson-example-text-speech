@@ -7,6 +7,7 @@ Instalar NodeJS y utitlizar algun editor
 
 - [Node.js](https://nodejs.org/) v14+ como motor.
 - Un editor como [VsCode](https://code.visualstudio.com/)
+- Cuenta de IBM Cloud
 
 ## Paso 0 
 
