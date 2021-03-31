@@ -36,7 +36,7 @@ Ahora vamos a crear las credenciales con las cuales podremos usar los servicios 
 
 - Vamos a la pagina de IBM Cloud [Dashboard](https://cloud.ibm.com/).
 - Luego crearemos un nuevo recurso en [**Crear Recurso > AI**](https://cloud.ibm.com/catalog?category=ai) y crea la instancia del servicio [Ejemplo](archivos_tutorial/Paso1_1_Ibm_cloud_resource.PNG).
-- Una vez creado la instancia damos clik en **Administracion** y vemos la url y el API key. [Ejemplo](https://raw.githubusercontent.com/kaliro/watson-example-text-speech/paso1/archivos_tutorial/Paso1_2_manage_api.PNG)
+- Una vez creado la instancia damos clik en **Administracion** y vemos la url y el API key. [Ejemplo](archivos_tutorial/Paso1_2_manage_api.PNG)
 - Copiamos estos valores y los reemplazamos en nuestro archivo .env
 - Una vez reemplazado los valores ejecuta.
 
