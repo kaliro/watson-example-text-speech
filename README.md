@@ -29,3 +29,22 @@ $ npm run local
 ```
 
 - abre el explorador en http://localhost:3000
+
+## Paso 1
+
+Ahora vamos a crear las credenciales con las cuales podremos usar los servicios de IBM Watson existen muchas formas de autenticarse aqui puedes encontrar mas [info](https://github.com/watson-developer-cloud/node-sdk#authentication).
+
+- Vamos a la pagina de IBM Cloud [Dashboard](https://cloud.ibm.com/)
+- Luego crearemos un nuevo recurso en [**Crear Recurso > AI**](https://cloud.ibm.com/catalog?category=ai) y crea la instancia del servicio.
+- Una vez creado la instancia damos clik en **Administracion** y vemos la url y el API key
+- Copiamos estos valores y los reemplazamos en nuestro archivo .env
+- Una vez reemplazado los valores ejecuta.
+
+```bash
+# ejecutara y creara un archivo en el directorio base.
+$ npm run prueba
+```
+
+- Una vez terminada la ejecucion buscamos en el directorio base un archivo llamado `hola_mundo.mp3` y reproducelo.
+- Prueba explorando el archivo `prueba.js`.
+- Cambia el texto y ejecutar nuevamente el comando `npm run prueba` y luego reproduce el archivo `hola_mundo.mp3` .
