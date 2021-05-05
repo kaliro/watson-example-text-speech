@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Texto a Voz</title>
+
+     <!-- Custom styles for this template -->
+     <link href="/basic.css" rel="stylesheet">
+
+</head>
+  <body >
+    <div class="container">
+        <h1 class="mt-4">Texto a Voz </h1>
+        <p>Esto es un ejemplo de como usar el servicio de <strong >TextToSpeech de IBM </strong> en un servicio.</p>
+        <div class="row mb-3">
+            <div class="col-md-8 themed-grid-col">
+                <form id="formTextToSpeech">
+                    <div class="form-group">
+                      <label for="formLabelVoces">Voz</label>
+                      <select class="form-control" id="formSelectVoces" name="voice"></select>
+                    </div>
+                    <input id="formHiddenAccept" name="accept" type="hidden" value="audio/mp3">
+                    <div class="form-group">
+                      <label for="formLabelTexto">Texto a Convertir</label>
+                      <textarea class="form-control" id="formTextareaTexto" name="text" rows="3"></textarea>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-sm-10">
+                          <button type="submit" class="btn btn-primary">Sintetizar</button>
+                        </div>
+                    </div>
+
+                  </form>
+            </div>
+            <div class="col-md-4 themed-grid-col">
+                <div class="media">
+                    <audio controls id="playerTextVoz" type="audio/mpeg">
+                    </audio>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <!-- Scripts Areas -->
+    <script>
+        (function() {
+            // Obtener todas las voces que estan disponibles en el servicio.
+            // luego las muestra todas y seleciona la voz de enrique por defecto.
+          $.getJSON("/api/voces")
+            .done(function( data ) {
+              $.each( data.voices, function( i, voice ) {
+                var optionHtml = voice.name == "es-ES_EnriqueV3Voice" ? "<option selected></option>" : "<option></option>";
+                $("#formSelectVoces" ).append($(optionHtml).val(voice.name).html(voice.description))
+              });
+            });
+        
+            // Enviar el formulario.
+            $("#formTextToSpeech").on( "submit",function(e) {
+                e.preventDefault();
+                var formData = $(this).serialize();
+                var url = "/api/sintetizar?"+formData;
+                var player = $("#playerTextVoz");
+                player.attr("src",url);
+                player.trigger('load');
+            });
+
+        })();
+    </script>
+   
+  </body>
+</html>
