@@ -9,7 +9,7 @@ Instalar NodeJS y utitlizar algun editor
 - Un editor como [VsCode](https://code.visualstudio.com/)
 - Cuenta de IBM Cloud
 
-## Paso 0 
+## Paso 0
 
 Luego de que tengas instalado NodeJs y un editor de tu preferencia abre este proyecto y a continuaciom
 
@@ -48,3 +48,12 @@ $ npm run prueba
 - Una vez terminada la ejecucion buscamos en el directorio base un archivo llamado `hola_mundo.mp3` y reproducelo.
 - Prueba explorando el archivo `prueba.js`.
 - Cambia el texto y ejecutar nuevamente el comando `npm run prueba` y luego reproduce el archivo `hola_mundo.mp3`.
+
+## Paso 2
+
+ejecutar
+
+```bash
+# server con refresh automatico en localhost:3000
+$ npm run local
+```
